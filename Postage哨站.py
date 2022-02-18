@@ -33,7 +33,9 @@ table_1_list = (table_1[0].df).append(table_1[1].df)
 for i in range(table_1_length-2):
     table_1_list = table_1_list.append(table_1[i].df)
 table_1_list = table_1_list[(table_1_list[0]=='Kowloon City')]
-
+#以下两行用于处理数据
+table_1_list = table_1_list[(table_1_list[0]=='Kowloon City')]
+table_1_list['2'],table_1_list['3'] = '000000','HongKong'
 
 #提取有关地点GPS位置
 #code from Youtube:
@@ -77,3 +79,5 @@ print("你们之间的距离是" + str(distance) + '公里')
 #设定警戒阈值，我也不知道感染源距离你的直线距离大于多少才算安全
 
 #如果低于警戒阈值，发出提醒并输出对应确诊大楼的位置信息（街道名称与号码）
+
+#处理好了输出在地图上，并且删除原pdf
